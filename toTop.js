@@ -1,4 +1,4 @@
-﻿;(function($,document,window,undefined){
+;(function($,document,window,undefined){
 	 function ToTop(ele,options){
 		 var $this=ele,   //回到顶部按钮的class/id
 	 		 _this=this,
@@ -11,11 +11,11 @@
 			 }else{
 				 $this.hide();
 			 }
-	 	}
- 		_this.isShow(pos)
+	 	};
+ 		_this.isShow(pos);
 		 $this.on('click',function(){
 			 $('html,body').animate({scrollTop:scrollPos})
-		 })
+		 });
 		 $(window).scroll(function(){
 			 scrolltop=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 			 _this.isShow(pos)
@@ -27,13 +27,13 @@
              parameter = {};
          }else{
              parameter = parameter || {};
-             callback = callback || function(){};             
+             callback = callback || function(){};
          }
 		 var defaults={
 			 pos:100,     //滚动条在该位置时显示
 			 scrollPos:0  //点击之后滚动条到达的位置
-		 }
-		 var options=$.extend({},defaults,parameter),
-		 newtoTop= new ToTop(this,options)
+		 };
+		 var options=$.extend({},defaults,parameter);
+		 new ToTop(this,options);
 	 }
- })(jQuery,document,window)
+ })(jQuery,document,window);
